@@ -1,0 +1,15 @@
+---
+description: library for ST Microelectronics ISM330DHCX chip. 
+fullname: lib.stm.ism330dhcx
+info:
+    chip_manufacturer: ST Microelectronics 
+    chip_name: ISM330DHCX
+    name: Accelerometer and Gyroscope Sensor
+    type: Actuator
+keywords:
+- stm 
+- sensors
+- accelerometer
+- gyroscope
+title: STM  ISM330DHCX Chip Library
+...
