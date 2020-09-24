@@ -132,7 +132,7 @@ class ISM330DHCX(spi.Spi):
 
     :param spidrv: the *SPI* driver to use (SPI0, ...)
     :param pin_cs: Chip select pin to access the ISM330DHCX chip
-    :param clk: Clock speed, default 500 kHz
+    :param clk: Clock speed, default 5 MHz
 
     Example: ::
 
@@ -471,6 +471,9 @@ class ISM330DHCX(spi.Spi):
             return ret
         ret = (ret[0] * s, ret[1] * s, ret[2] * s)
         # ret = (x * s, y * s, z * s)
+        if dps == False:
+            return ret
+        ret = (ret[0] / 1000.0, ret[1] / 1000.0, ret[2] / 1000.0)
         return ret
 
     def get_temp_data(self, raw=False):
